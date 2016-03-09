@@ -13,9 +13,9 @@ public class JedisUtil {
 		GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
 		poolConfig.setMaxIdle(1000);
 		poolConfig.setMaxTotal(100);
-		poolConfig.setMaxWaitMillis(1000);
+		poolConfig.setMaxWaitMillis(5000);
 		poolConfig.setMinIdle(10);
-		jedisPool = new JedisPool(poolConfig, "192.168.43.20", 6379);
+		jedisPool = new JedisPool(poolConfig, "192.168.1.118", 6379);
 	}
 	public static Jedis getJedis(){
 		if(jedis == null){
@@ -23,7 +23,7 @@ public class JedisUtil {
 				init();
 			}
 			jedis = jedisPool.getResource();
-			jedis.auth("ljh910618");
+			jedis.auth("123456");
 		}
 		return jedis;
 	}

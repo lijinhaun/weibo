@@ -13,7 +13,7 @@ public class SessionUtil {
 		JedisUtil.set(key, value);
 	}
 	
-	public static Object getSession(byte[] key){
+	public static byte[] getSession(byte[] key){
 		return JedisUtil.get(key);
 	}
 	

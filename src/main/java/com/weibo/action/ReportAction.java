@@ -14,12 +14,11 @@ public class ReportAction {
 	
 	@RequestMapping("/report.do")
 	public String testReoprt(Model model){
-		System.out.println("����ɹ�");
 		 // 报表数据源  
 	    JRDataSource jrDataSource = new JRBeanCollectionDataSource(new ArrayList()); 
 		model.addAttribute("url", "/WEB-INF/jasper/report2.jasper");
-		model.addAttribute("format", "pdf"); // �����ʽ  
+		model.addAttribute("format", "pdf");  
 		model.addAttribute("jrMainDataSource", jrDataSource);  
-		return "iReportView"; // ��Ӧjasper-defs.xml�е�bean id  
+		return "iReportView"; 
 	}
 }

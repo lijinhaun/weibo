@@ -29,7 +29,7 @@ public class UserAction {
 			byte[] value = ObjectUtil.object2Byte(user1);
 			SessionUtil.setSession(key, value);
 		}
-		User user2 = (User) SessionUtil.getSession(ObjectUtil.object2Byte(user1.getId()));
+		User user2 = (User) ObjectUtil.byte2Object( SessionUtil.getSession(ObjectUtil.object2Byte(user1.getId())));;
 		System.out.println(user2);
 		return "test";
 	}
