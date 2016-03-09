@@ -47,6 +47,7 @@
 		<param-value>/WEB-INF/config/spring-core.xml</param-value>
 	</context-param>
 
+	<!-- Bootstraps the root web application context before servlet initialization -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

@@ -1,5 +1,10 @@
 package com.weibo.action;
 
+import java.util.ArrayList;
+
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,9 +14,12 @@ public class ReportAction {
 	
 	@RequestMapping("/report.do")
 	public String testReoprt(Model model){
-		System.out.println("ÇëÇó³É¹¦");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
+		 // æŠ¥è¡¨æ•°æ®æº  
+	    JRDataSource jrDataSource = new JRBeanCollectionDataSource(new ArrayList()); 
 		model.addAttribute("url", "/WEB-INF/jasper/report2.jasper");
-//		model.addAttribute("format", "pdf"); // ±¨±í¸ñÊ½  
-		return "iReportView"; // ¶ÔÓ¦jasper-defs.xmlÖĞµÄbean id  
+		model.addAttribute("format", "pdf"); // ï¿½ï¿½ï¿½ï¿½ï¿½Ê½  
+		model.addAttribute("jrMainDataSource", jrDataSource);  
+		return "iReportView"; // ï¿½ï¿½Ó¦jasper-defs.xmlï¿½Ğµï¿½bean id  
 	}
 }
